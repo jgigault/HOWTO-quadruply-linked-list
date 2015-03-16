@@ -1,7 +1,7 @@
 # HOWTO 01
 ## Step 3 - Link the points together
 
-We have a loop that generates each point of the map, one at a time, but each one is immediatly replaced during the next iteration by the next point of the map. Then we need to save temporarily the preceding point in order to link them together. We will get, as a first step, a simple doubly linked list that will represent a single row of the map.
+We have a loop that generates each point of the map, one at a time, but each one is immediatly replaced by the next one during the next iteration. So we need to save temporarily the preceding point in order to link them together. We will get, as a first step, a simple doubly linked list that will represent a single row of the map.
 
 First, declare a second pointer to struct called *prev_left that will represent the nearest point on the left side.
 
