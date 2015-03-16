@@ -18,6 +18,7 @@ After opening the file and making sure that there is no error, we choose to read
 int         main(int argc, char **argv)
 {
 	int     fd;
+	ssize_t size;
 	char    buf[BUFF_SIZE];
 
 	// Check if any filename is set
