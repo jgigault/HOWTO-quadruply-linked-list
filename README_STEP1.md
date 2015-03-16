@@ -5,7 +5,7 @@ Let's start this HOWTO by simply reading the file that contains the 2D matrix. T
 
 	./count_island example1.txt
 
-A 2D matrix is a sequence of points delimited in rows and columns. Each byte of the file represents one point of the matrix, except the '\n' that delimits the rows:
+A 2D matrix is a sequence of points delimited in rows and columns. Each byte of the file represents one point of the matrix ('.' is water, 'X' is land), except the '\n' that delimits the rows:
 
 	.........\n
 	...XXX...\n
