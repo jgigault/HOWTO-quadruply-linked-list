@@ -71,4 +71,4 @@ THE_LOOP
 }
 ```
 
-Next step consists in linking the struct points *pt together.
+Next step consists in linking the struct points *pt together...
