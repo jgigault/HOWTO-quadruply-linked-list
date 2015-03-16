@@ -62,8 +62,10 @@ THE_LOOP
 	}
 	else
 	{
+		// Now, initialize each point of the map
 		pt = howto01_init_point(buf[0]);
-		// Here are the initialized points
+
+		// Points are currently unlinked
 		// Let's link them at step 3...
 	}
 }
