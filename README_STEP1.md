@@ -15,27 +15,37 @@ A 2D matrix is a sequence of points delimited in rows and columns. Each byte of 
 After opening the file and making sure that there is no error, we choose to read the file one byte at a time, with a buffer size of 1, in order to parse its content in live.
 
 ```c
-// Open the file with read-only mode
-fd = open(argv[1], O_RDONLY);
-if (fd == -1)
-	return (0);
-
-// Read one byte at a time with a buffer size of 1
-while ((size = read(fd, buf, BUFF_SIZE)) > 0)
+int         main(int argc, char **argv)
 {
-	if (size == -1)
+	int     fd;
+	char    buf[BUFF_SIZE];
+
+	// Check if any filename is set
+	if (argc != 2)
 		return (0);
 
-	// Verify if the byte is valid
-	if (buf[0] != '.' && buf[0] != 'X' && buf[0] != '\n')
-	{
-		close(fd);
+	// Open the file with read-only mode
+	fd = open(argv[1], O_RDONLY);
+	if (fd == -1)
 		return (0);
+
+	// Read one byte at a time with a buffer size of 1
+	while ((size = read(fd, buf, BUFF_SIZE)) > 0)
+	{
+		if (size == -1)
+			return (0);
+
+		// Verify if the byte is valid
+		if (buf[0] != '.' && buf[0] != 'X' && buf[0] != '\n')
+		{
+			close(fd);
+			return (0);
+		}
+
+		// Here, parse the file in live...
 	}
 
-	// Here, parse the file in live...
+	// Close the file
+	close(fd);
 }
-
-// Close the file
-close(fd);
 ```
