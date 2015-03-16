@@ -44,7 +44,7 @@ t_point                *howto01_init_point(char value)
 }
 ```
 
-The function init_point() initially set the 4 pointers as NULL, then you can say: "The first time I will call this function, the struct point I will receive will represent a valid map of 1x1 block". It is always safer to set every member of a struct type element!
+The function init_point() initially set the 4 pointers as NULL, then you can say: "The first time I call the function, I get a struct point that represents a valid map of 1x1 block". It is always safer to set every member of a struct type element!
 
 Now, consider the loop that reads the file (step 1) and let's initialize each point of the map:
 
