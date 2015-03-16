@@ -15,6 +15,8 @@ A 2D matrix is a sequence of points delimited in rows and columns. Each byte of 
 After opening the file and making sure that there is no error, we choose to read the file one byte at a time, with a buffer size of 1, in order to parse its content in live.
 
 ```c
+#define BUFF_SIZE 1
+
 int         main(int argc, char **argv)
 {
 	int     fd;
