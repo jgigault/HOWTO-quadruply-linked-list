@@ -53,6 +53,8 @@ t_point                *pt;
 
 THE_LOOP
 {
+	// The loop reads the file one byte at a time and put it in buf[0]
+
 	if (buf[0] == '\n')
 	{
 		// '\n' is not a point! It is a row delimiter
