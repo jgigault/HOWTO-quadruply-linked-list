@@ -65,7 +65,7 @@ THE_LOOP
 		// Now, initialize each point of the map
 		pt = howto01_init_point(buf[0]);
 
-		// Points are currently unlinked
+		// Points are currently not linked and the pointer *pt is replaced each turn
 		// Let's link them at step 3...
 	}
 }
