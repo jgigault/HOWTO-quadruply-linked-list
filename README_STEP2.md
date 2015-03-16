@@ -51,9 +51,12 @@ Now, consider the loop that reads the file (step 1) and let's initialize each po
 ```c
 t_point                *pt;
 
+// Initially set the pointer to struct as NULL (Be safe!)
+pt = NULL;
+
 THE_LOOP
 {
-	// The loop reads the file one byte at a time and puts it into buf[0]
+	// The loop fro; step 1 reads the file one byte at a time and puts it into buf[0]
 
 	if (buf[0] == '\n')
 	{
