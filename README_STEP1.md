@@ -5,12 +5,15 @@ Let's start this HOWTO by simply reading the file that contains the 2D matrix. T
 
 	./count_island example1.txt
 
-A 2D matrix is a sequence of points delimited in rows and columns. Each byte of the file represents one point of the matrix ('.' is water, 'X' is land), except the '\n' that delimits the rows:
+A 2D matrix is a sequence of points delimited in rows and columns. Each byte of the file represents one point of the matrix ('.' is water, 'X' is land), except the '\n' that delimits the rows. An island is defined by one or more 'X' that touch themselves immediatly on the right, left, top or bottom direction:
 
-	.........\n
-	...XXX...\n
-	...XXX...\n
-	.........EOF
+	.........\n     .........\n     .........\n
+	...XXX...\n     ...XX....\n     ...X.....\n
+	...XXX...\n     ...XX....\n     ....X....\n
+	...XXX...\n     .....X...\n     .....X...\n
+	.........EOF    .........EOF    .........EOF
+
+	=> 1 island      => 2 islands   => 3 islands
 
 After opening the file and making sure that there is no error, we choose to read the file one byte at a time, with a buffer size of 1, in order to parse its content in live.
 
