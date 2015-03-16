@@ -6,7 +6,7 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 13:28:42 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/16 14:40:58 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/16 15:33:55 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,14 @@ int						main(int argc, char **argv)
 	while ((size = read(fd, buf, BUFF_SIZE)) > 0)
 	{
 
-		if (size < -1)
+		if (size == -1)
 			return (howto01_display_error(&pt));
+
+		if (buf[0] != '.' && buf[0] != 'X' && buf[0] != '\n')
+		{
+			close(fd);
+			return (howto01_display_error(&pt));
+		}
 
 		if (buf[0] == '\n')
 		{
@@ -58,9 +64,6 @@ int						main(int argc, char **argv)
 		}
 		else
 		{
-			if (buf[0] != '.' && buf[0] != 'X')
-				return (howto01_display_error(&pt));
-
 			pt = howto01_init_point(buf[0]);
 			if (pt == NULL)
 				return (howto01_display_error(&pt));
