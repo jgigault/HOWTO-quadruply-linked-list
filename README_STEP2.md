@@ -30,7 +30,7 @@ t_point                *howto01_init_point(char value)
 	if (pt == NULL)
 		return (NULL);
 
-	// Set the land type with the value received
+	// Set the land type with the received value
 	pt->value = value;
 
 	// Set initial value of the 4 pointers
@@ -40,7 +40,7 @@ t_point                *howto01_init_point(char value)
 	pt->left = NULL;
 
 	// Finally, return the initialized struct point
-	return (pt)
+	return (pt);
 }
 ```
 
@@ -53,7 +53,7 @@ t_point                *pt;
 
 THE_LOOP
 {
-	// The loop reads the file one byte at a time and put it in buf[0]
+	// The loop reads the file one byte at a time and puts it into buf[0]
 
 	if (buf[0] == '\n')
 	{
@@ -62,7 +62,7 @@ THE_LOOP
 	}
 	else
 	{
-		// Now, initialize each point of the map
+		// Now, initialize each point of the map '.' and 'X'
 		pt = howto01_init_point(buf[0]);
 
 		// Points are currently not linked and the pointer *pt is replaced each turn
@@ -70,3 +70,5 @@ THE_LOOP
 	}
 }
 ```
+
+Next step consists in linking the struct points *pt together.
