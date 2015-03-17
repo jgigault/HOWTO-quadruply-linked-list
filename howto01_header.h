@@ -6,7 +6,7 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 13:25:05 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/16 14:41:13 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/17 16:10:11 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void						howto01_free_map(t_point **pt);
 int							howto01_display_error(t_point **map);
 void						howto01_rewind_left(t_point **pt);
 void						howto01_rewind_top(t_point **pt);
-void						howto01_display_map(t_point **pt);
-int							howto01_create_islands(t_point **pt);
+void						howto01_display_map(t_point *pt);
+int							howto01_create_islands(t_point *pt);
 
 #endif

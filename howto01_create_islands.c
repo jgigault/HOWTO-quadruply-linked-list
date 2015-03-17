@@ -6,13 +6,13 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 14:32:01 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/16 14:39:33 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/17 17:08:35 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "howto01_header.h"
 
-static void			howto01_recursive(t_point *pt, int index)
+static void			howto01_fill_island(t_point *pt, int index)
 {
 	pt->value = index + 48;
 	if (pt->top && pt->top->value == 'X')
@@ -25,27 +25,27 @@ static void			howto01_recursive(t_point *pt, int index)
 		howto01_recursive(pt->left, index);
 }
 
-int					howto01_create_islands(t_point **pt)
+int					howto01_create_islands(t_point *pt)
 {
-	t_point			*row;
-	t_point			*col;
+	t_point			*current_pt;
+	t_point			*current_row;
 	int				index;
 
 	index = 0;
-	col = *pt;
-	while (col)
+	current_row = pt;
+	while (current_row)
 	{
-		row = col;
-		while (row)
+		current_pt = current_row;
+		while (current_pt)
 		{
-			if (row->value == 'X')
+			if (current_pt->value == 'X')
 			{
-				howto01_recursive(row, index);
+				howto01_fill_island(current_pt, index);
 				index++;
 			}
-			row = row->right;
+			current_pt = current_pt->right;
 		}
-		col = col->bottom;
+		current_row = current_row->bottom;
 	}
 	return (index);
 }

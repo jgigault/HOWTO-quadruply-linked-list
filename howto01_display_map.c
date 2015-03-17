@@ -6,18 +6,18 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 14:25:48 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/16 14:31:08 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/17 16:11:00 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "howto01_header.h"
 
-void				howto01_display_map(t_point **pt)
+void				howto01_display_map(t_point *pt)
 {
 	t_point			*row;
 	t_point			*col;
 
-	col = *pt;
+	col = pt;
 	while (col)
 	{
 		row = col;

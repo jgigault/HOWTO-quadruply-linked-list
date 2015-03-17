@@ -6,7 +6,7 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 13:28:42 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/16 15:33:55 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/17 16:09:50 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,9 +90,9 @@ int						main(int argc, char **argv)
 	howto01_rewind_left(&pt);
 	howto01_rewind_top(&pt);
 
-	howto01_create_islands(&pt);
+	howto01_create_islands(pt);
 
-	howto01_display_map(&pt);
+	howto01_display_map(pt);
 
 	howto01_free_map(&pt);
 	return (0);
