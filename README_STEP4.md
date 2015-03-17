@@ -67,7 +67,7 @@ void				create_islands(t_point *pt)
 			// Check if 'X' is encountered
 			if (current_pt->value == 'X')
 			{
-				// Replace 'X' by the current index
+				// Replace all 'X' of the current island by the current index
 				fill_island(current_pt, index);
 
 				// Incremente the index
