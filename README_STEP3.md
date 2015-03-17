@@ -10,33 +10,33 @@ t_point                *pt;
 t_point                *prev_left;
 
 pt = NULL;
-prev_left = NULL;      // ((A)) Initialize it as NULL
+prev_left = NULL;      // [1] Initialize it as NULL
 
 THE_LOOP
 {
 	if (buf[0] == '\n')
 	{
-		// ((C)) At the end of a line, we re-initialize it as NULL (see below)
+		// [5] At the end of a line, we re-initialize it as NULL (see below)
 		prev_left = NULL;
 	}
 	else
 	{
 		pt = howto01_init_point(buf[0]);
 
-		// Set the left side of the current point as a pointer to the previous point
+		// [2] Set the left side of the current point as a pointer to the previous point
 		pt->left = prev_left;
 
-		// If the previous point does exist, set its right side as a pointer to the current point
+		// [3] If the previous point does exist, set its right side as a pointer to the current point
 		if (prev_left)
 			prev_left->right = pt;
 
-		// ((B)) Finally, set the current point as the previous, in order to use it during the next iteration
+		// [4] Finally, set the current point as the previous, in order to use it during the next iteration
 		prev_left = pt;
 	}
 }
 ```
 
-At first iteration, the pointer *prev_left is NULL ((A)) so that the left side of the first point *pt remains as NULL and does represent the left borderline of the map. Before entering the next iteration ((B)), *prev_left saves a reference to the current point so that we will be able to link together with the next point *pt. And so on until reaching the end of line. When a '\n' is encountered, we know that we have to initialize a new row of the map, and *prev_left should once again represent the left borderline of the map, so we set it as NULL ((C)).
+At first iteration, the pointer *prev_left is NULL [1] so that the left side of the first point *pt remains as NULL and does represent the left borderline of the map. At next iterations, *pt and *prev_left are linked together [2 & 3]. Before entering the next iteration [4], *prev_left saves a reference to the current point so that we will be able to link together with the next point *pt. And so on until reaching the end of line. When a '\n' is encountered, we know that we have to initialize a new row of the map, and *prev_left should once again represent the left borderline of the map, so we set it as NULL [5].
 
 For each row of the map, we obtain a doubly linked list, but each list is immediatly replaced by the next one during the next sequence of iterations (between two encountered '\n'). Then we need to save temporarily a reference to the preceding row of the map in order to link each point of the twice lists together by both *top and *bottom sides.
 
