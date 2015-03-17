@@ -15,7 +15,7 @@ typedef struct         s_point
 	struct s_point     *right;
 	struct s_point     *bottom;
 	struct s_point     *left;
-}
+}                      t_point;
 ```
 
 Now declare a function that will allocate memory and initialize each point of the map. The function takes one argument corresponding with the land type:
