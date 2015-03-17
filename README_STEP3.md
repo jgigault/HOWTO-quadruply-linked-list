@@ -95,6 +95,11 @@ After the loop has terminated, *pt is a reference to one point of the last row o
 
 
 ```c
+THE_LOOP
+{
+	...
+}
+
 if (pt)
 {
 	// Rewind the left borderline
