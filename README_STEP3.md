@@ -3,7 +3,7 @@
 
 We have a loop that generates each point of the map, one at a time, but each one is immediatly replaced by the next point during the next iteration. We need to temporarily save a reference to the preceding point in order to link it with the current one. We will get, as a first step, a simple doubly linked list that will represent a single row of the 2D matrix.
 
-Declare a second pointer to struct called *prev_left that will represent the point we have initialized during the previous iteration:
+Let's declare a second pointer to struct called *prev_left that will represent the point we have initialized during the previous iteration:
 
 ```c
 t_point                *pt;
@@ -38,7 +38,7 @@ THE_LOOP
 
 At first iteration, the pointer *prev_left is NULL [1] so that the left side of the first point *pt [2] remains as NULL and does represent the left borderline of the map. Before entering the next iteration [4], *prev_left saves a reference to the current point so that *pt and *prev_left can be linked together [2 & 3]. And so on until reaching the end of line. When a '\n' is encountered, we know that we have to initialize a new row of the map, and *prev_left should once again represent the left borderline of the map, so we set it as NULL [5].
 
-For each row of the map, we obtain a doubly linked list, but each list is immediatly replaced by the next one during the next sequence of iterations (between two encountered '\n'). Then we need to save temporarily a reference to the preceding row of the map in order to link each point of the twice lists together by both *top and *bottom sides.
+For each row of the map, we obtain a doubly linked list, but each list is immediatly replaced by the next one during the next sequence of iterations (between two encountered '\n'). We need to temporarily save a reference to the preceding row of the map in order to link each point of the twice lists together by both *top and *bottom sides.
 
 Declare a third pointer to struct called *prev_top that will represent, for each current point *pt, the nearest point from the top direction:
 
