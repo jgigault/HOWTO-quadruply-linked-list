@@ -21,7 +21,7 @@ typedef struct         s_point
 Now declare a function that allocates memory and initializes each point of the map. The function takes one argument corresponding with the land type:
 
 ```c
-t_point                *howto01_init_point(char value)
+t_point                *init_point(char value)
 {
 	t_point            *pt;
 
@@ -65,13 +65,13 @@ THE_LOOP
 	}
 	else
 	{
-		// Now, initialize each point of the map '.' and 'X'
-		pt = howto01_init_point(buf[0]);
+		// Initialize each point of the map '.' and 'X'
+		pt = init_point(buf[0]);
 
-		// Points are currently not linked and the pointer *pt is replaced each turn
-		// Let's link them at step 3...
+		// The points are currently not linked together and the pointer *pt is replaced on each turn
+		// Let's do something here at step 3...
 	}
 }
 ```
 
-Next step consists in linking the struct points *pt together...
+Next step consists in linking all of the struct points *pt together...
