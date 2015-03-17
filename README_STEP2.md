@@ -3,7 +3,7 @@
 
 A linked list is a data structure consisting of a sequence of structure type elements. Each struct element contains one or more pointers to one or more other elements of the list. In a quadruply linked list intended to represent a 2D matrix, each struct element contains 4 pointers representing the 4 sides of a virtual square (top, right, bottom, left) and squares that are linked together define the matrice. In order to define the borderlines of the 2D matrix, pointers that are next to a limit are set to NULL:
 
-	[image]
+![Image 1](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/img/schema-1.png "A map of 4x2 points")
 
 Let's start by declaring the structure called s_point with 5 members: One char corresponding with the land type of the point (water '.' or land 'X') and 4 pointers to each direction (*top, *right, *bottom and *left):
 
