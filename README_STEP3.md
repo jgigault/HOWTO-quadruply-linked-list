@@ -102,11 +102,11 @@ THE_LOOP
 
 if (pt)
 {
-	// Rewind the left borderline
+	// Rewind to the left borderline
 	while (pt->left)
 		pt = pt->left;
 
-	// Rewinf to the top borderline
+	// Rewind to the top borderline
 	while (pt->top)
 		pt = pt->top;
 }
