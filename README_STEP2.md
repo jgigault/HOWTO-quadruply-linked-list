@@ -18,7 +18,7 @@ typedef struct         s_point
 }                      t_point;
 ```
 
-Now declare a function that will allocate memory and initialize each point of the map. The function takes one argument corresponding with the land type:
+Now declare a function that allocates memory and initializes each point of the map. The function takes one argument corresponding with the land type:
 
 ```c
 t_point                *howto01_init_point(char value)
