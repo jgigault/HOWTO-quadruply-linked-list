@@ -113,3 +113,9 @@ if (pt)
 		pt = pt->top;
 }
 ```
+
+***
+
+### Next step: Fill islands
+
+-> [Step 4 - Fill islands](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP4.md)
