@@ -16,7 +16,6 @@ void				create_islands(t_point *pt)
 	current_pt = pt;
 	while (current_pt)
 	{
-
 		// Get a reference to the next point
 		current_pt = current_pt->right;
 	}
@@ -35,7 +34,6 @@ void				create_islands(t_point *pt)
 	current_row = pt;
 	while (current_row)
 	{
-
 		// Change this line and get, for each row, a reference to the first point and start the loop
 		current_pt = current_row;
 		while (current_pt)
@@ -49,7 +47,7 @@ void				create_islands(t_point *pt)
 }
 ```
 
-Every point of the map is now browsed by *current_pt. Let's check if we encounter the character 'X'. When it appears, call a function fill_island() that will replace all 'X' of the current island with the new index, and then incremente the index and continue the loop:
+Every point of the map is now reached by *current_pt. Let's check if we encounter the character 'X'. When it appears, call a function fill_island() that will replace all 'X' of the current island with the new index, and then incremente the index and continue the loop:
 
 ```c
 void				create_islands(t_point *pt)
@@ -66,11 +64,9 @@ void				create_islands(t_point *pt)
 		current_pt = current_row;
 		while (current_pt)
 		{
-
 			// Check if 'X' is encountered
 			if (current_pt->value == 'X')
 			{
-
 				// Replace 'X' by the current index
 				fill_island(current_pt, index);
 
