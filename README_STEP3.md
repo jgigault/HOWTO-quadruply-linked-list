@@ -88,3 +88,5 @@ THE_LOOP
 	}
 }
 ```
+
+During the first sequence of iteration, until the character '\n' is encountered, *prev_top is NULL so that
