@@ -30,13 +30,13 @@ THE_LOOP
 		if (prev_left)
 			prev_left->right = pt;
 
-		// [4] Finally, set the current point as the previous, in order to use it during the next iteration
+		// [3] Finally, set the current point as the previous, in order to use it during the next iteration
 		prev_left = pt;
 	}
 }
 ```
 
-At first iteration, the pointer *prev_left is NULL [1] so that the left side of the first point *pt remains as NULL and does represent the left borderline of the map. At next iterations, *pt and *prev_left are linked together [2 & 3]. Before entering the next iteration [4], *prev_left saves a reference to the current point so that we will be able to link together with the next point *pt. And so on until reaching the end of line. When a '\n' is encountered, we know that we have to initialize a new row of the map, and *prev_left should once again represent the left borderline of the map, so we set it as NULL [5].
+At first iteration, the pointer *prev_left is NULL [1] so that the left side of the first point *pt [2] remains as NULL and does represent the left borderline of the map. Before entering the next iteration [4], *prev_left saves a reference to the current point so that *pt and *prev_left can be linked together [2 & 3]. And so on until reaching the end of line. When a '\n' is encountered, we know that we have to initialize a new row of the map, and *prev_left should once again represent the left borderline of the map, so we set it as NULL [5].
 
 For each row of the map, we obtain a doubly linked list, but each list is immediatly replaced by the next one during the next sequence of iterations (between two encountered '\n'). Then we need to save temporarily a reference to the preceding row of the map in order to link each point of the twice lists together by both *top and *bottom sides.
 
@@ -49,7 +49,7 @@ t_point                *prev_top;
 
 pt = NULL;
 prev_left = NULL;
-prev_top = NULL;       // Initialize it as NULL
+prev_top = NULL;       // [1] Initialize it as NULL
 
 THE_LOOP
 {
@@ -57,13 +57,13 @@ THE_LOOP
 	{
 		prev_left = NULL;
 
-		// Each row is read from left to right, so we want *prev_top to be a pointer to the leftmost point
+		// [5] Each row is read from left to right, so we want *prev_top to be a pointer to the leftmost point
 		// First, rewind the current doubly linked list (because *pt is presently the rightmost point of the current row)
 		if (pt)
 			while (pt->left)
 				pt = pt->left;
 
-		// Then save this reference so that *prev_top will reprensent the first point of the preceding row
+		// [6] Then save this reference so that *prev_top will reprensent the first point of the preceding row
 		prev_top = pt;
 	}
 	else
@@ -74,19 +74,19 @@ THE_LOOP
 			prev_left->right = pt;
 		prev_left = pt;
 
-		// Set the top side of the current point as a pointer to the nearest point from the top
+		// [2] Set the top side of the current point
 		pt->top = prev_top;
 
-		// If the previous point does exist, set its bottom side as a pointer to the current point
+		// [3] If the previous point does exist, set its bottom side as a pointer to the current point
 		if (prev_top)
 			prev_top->bottom = pt;
 
-		// Finally, set the pointer *prev_top as a reference to the next point of the preceding row
-		// During the next iteration, this point will effectively be the nearest point from the top
+		// [4] Set *prev_top as a reference to the next point of the preceding row
+		// During the next iteration, 
 		if (prev_top)
 			prev_top = prev_top->right;
 	}
 }
 ```
 
-During the first sequence of iteration, until the character '\n' is encountered, *prev_top is NULL so that
+During the first sequence of iteration until the first '\n' is encountered, *prev_top is NULL [1] so that the top side of the current *pt [2] remains as NULL and does represent the top borderline of the map. Before entering the next sequence of iterations, *prev_top saves a reference to the first point of the current row by rewinding the doubly linked list *pt [5] and saving its reference [6]. Then, *pt and *prev_top can be linked together [2 & 3]. Finally, *prev_top must get a reference to the next point of the preceding row [4] so that *pt (current row) and *prev_top (preceding row) effectively match together with both *top and *bottom sides.
