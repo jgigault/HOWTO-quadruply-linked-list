@@ -57,13 +57,12 @@ THE_LOOP
 	{
 		prev_left = NULL;
 
-		// [5] Each row is read from left to right, so we want *prev_top to be a pointer to the leftmost point
-		// First, rewind the current doubly linked list (because *pt is presently the rightmost point of the current row)
+		// [5] Rewind the current doubly linked list *pt
 		if (pt)
 			while (pt->left)
 				pt = pt->left;
 
-		// [6] Then save this reference so that *prev_top will reprensent the first point of the preceding row
+		// [6] Then save a reference to *pt so that *prev_top reprensents the first point of the preceding row
 		prev_top = pt;
 	}
 	else
@@ -82,7 +81,6 @@ THE_LOOP
 			prev_top->bottom = pt;
 
 		// [4] Set *prev_top as a reference to the next point of the preceding row
-		// During the next iteration, 
 		if (prev_top)
 			prev_top = prev_top->right;
 	}
