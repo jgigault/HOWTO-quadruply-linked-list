@@ -40,7 +40,7 @@ At first iteration, the pointer *prev_left is NULL so that the left side of the 
 
 For each row of the map, we obtain a doubly linked list, but each list is immediatly replaced by the next one during the next sequence of iterations (between two encountered '\n'). Then we need to save temporarily a reference to the preceding row of the map in order to link each point of the twice lists together by both *top and *bottom sides.
 
-Declare a third pointer to struct called *prev_top that will represent, for each current point *pt, the nearest point from the top direction. *prev_top can also be assimilated with "a reference to the previous doubly linked list":
+Declare a third pointer to struct called *prev_top that will represent, for each current point *pt, the nearest point from the top direction:
 
 ```c
 t_point                *pt;
