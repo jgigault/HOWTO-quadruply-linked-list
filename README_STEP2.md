@@ -75,3 +75,9 @@ THE_LOOP
 ```
 
 Next step consists in linking all of the struct points *pt together...
+
+***
+
+### Next step: Link the points together
+
+-> [Step 3 - Link the points together](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP3.md)
