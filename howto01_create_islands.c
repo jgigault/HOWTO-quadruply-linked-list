@@ -6,7 +6,7 @@
 /*   By: jgigault <jgigault@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 14:32:01 by jgigault          #+#    #+#             */
-/*   Updated: 2015/03/17 17:08:35 by jgigault         ###   ########.fr       */
+/*   Updated: 2015/03/17 17:38:02 by jgigault         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int					howto01_create_islands(t_point *pt)
 			{
 				howto01_fill_island(current_pt, index);
 				index++;
+				if (index == 11)
+					return (index);
 			}
 			current_pt = current_pt->right;
 		}
