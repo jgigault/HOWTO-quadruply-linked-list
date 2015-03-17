@@ -53,6 +53,7 @@ int         main(int argc, char **argv)
 
 	// Close the file
 	close(fd);
+	return(0);
 }
 ```
 
