@@ -32,3 +32,9 @@ void				display_map(t_point *pt)
 We've done with it! Good job ;-)
 
 To get a successful project, you must add some checkpoints that will stop the program if an error occurs (more than 1024 points by row, different number of points by row, empties map, invalid characters, more than 10 islands...).
+
+***
+
+### Back to main menu
+
+-> [README](https://github.com/jgigault/HOWTO-quadruply-linked-list/)
