@@ -87,11 +87,13 @@ THE_LOOP
 }
 ```
 
-During the first sequence of iteration until the first '\n' is encountered, *prev_top is NULL [1] so that the top side of the current *pt [2] remains as NULL and does represent the top borderline of the map. Before entering the next sequence of iterations, *prev_top saves a reference to the first point of the current row by rewinding the doubly linked list *pt [5] and saving its reference [6]. Then, *pt and *prev_top can be linked together [2 & 3]. Finally, *prev_top must get a reference to the next point of the preceding row [4] so that *pt (current row) and *prev_top (preceding row) effectively match together with both *top and *bottom sides.
+During the first sequence of iteration until the first '\n' is encountered, *prev_top is NULL [1] so that the top side of the current *pt [2] remains as NULL and does represent the top borderline of the map. Before entering the next sequence of iterations, *prev_top saves a reference to the first point of the current row by rewinding the doubly linked list *pt [5] and saving a reference [6]. Then, *pt and *prev_top can be linked together [2 & 3]. Finally, *prev_top must get a reference to the next point of the preceding row [4] so that *pt (current row) and *prev_top (preceding row) effectively match together with both *top and *bottom sides.
 
-That's all! We have a beautiful quadruply linked list :-)
+	[img]
 
-After the loop has terminated, *pt is a reference to one point of the last row of the map. If there is no '\n' at the end of file, *pt is the bottom right corner of the map, otherwise *pt is the bottom left corner because the last byte of the file ('\n') made us rewind the current row [5]. In order to safely retrieve the beggining of the quadruply linked list (the top left corner), add a doubly rewind loop with both *left and *top directions:
+That's all! We've got a beautiful quadruply linked list :-)
+
+After the loop has terminated, *pt is a reference to one point of the last row of the map. If there is no '\n' at the end of file, *pt is the bottom right corner of the map, otherwise *pt is the bottom left corner because the last byte of the file ('\n') made us rewind the current row [5]. In order to safely retrieve the beggining of our quadruply linked list (the top left corner), simply add two rewind loops with both *left and *top directions:
 
 
 ```c
