@@ -58,6 +58,6 @@ int         main(int argc, char **argv)
 
 ***
 
-### Next step
+### Next step: Initialize the structure
 
 -> [Step 2 - Initialize the structure](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP2.md)
