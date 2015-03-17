@@ -56,7 +56,7 @@ pt = NULL;
 
 THE_LOOP
 {
-	// The loop fro; step 1 reads the file one byte at a time and puts it into buf[0]
+	// The loop from step #1 reads the file one byte at a time and puts it into buf[0]
 
 	if (buf[0] == '\n')
 	{
