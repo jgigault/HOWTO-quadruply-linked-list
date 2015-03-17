@@ -91,7 +91,7 @@ function				fill_island(t_point *current_pt, char index)
 	// Check the four directions and don't call recursively when:
 	// 1. A pointer is NULL, that means we've reached the borderline of the map
 	// 2. Value is not 'X', that means we've already replaced this point or this is water!
-	
+
 	if (current_pt->top != NULL && current_pt->top->value == 'X')
 		fill_island(current_pt->top, index);
 	if (current_pt->right != NULL && current_pt->right->value == 'X')
@@ -102,5 +102,3 @@ function				fill_island(t_point *current_pt, char index)
 		fill_island(current_pt->left, index);
 }
 ```
-
-replace the value of the point referenced by *current_pt with the ASCII value of index, and call itself recursively 
