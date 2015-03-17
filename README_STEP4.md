@@ -102,3 +102,9 @@ function				fill_island(t_point *current_pt, char index)
 		fill_island(current_pt->left, index);
 }
 ```
+
+***
+
+### Next step: Display map
+
+-> [Step 5 - Display map](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP5.md)
