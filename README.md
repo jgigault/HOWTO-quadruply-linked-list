@@ -7,3 +7,5 @@ Let's try with the exams subject called "count_island" at 42 School
 3. [Step 3 - Link the points together](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP3.md)
 4. [Step 4 - Fill islands](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP4.md)
 5. [Step 5 - Display map](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/README_STEP5.md)
+
+![Image 1](https://github.com/jgigault/HOWTO-quadruply-linked-list/blob/master/img/schema-1.png "A map of 4x2 points")
