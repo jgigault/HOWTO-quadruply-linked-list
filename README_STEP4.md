@@ -39,7 +39,7 @@ Secondary, include this loop in another loop that browses each row of the map:
 +       current_row = pt;
 +       while (current_row)
 +       {
-+           // Change this line and get, for each row, a reference to the first point and start the loop
++           // Change this line and get a reference to the first point of each row
 +           current_pt = current_row;
             while (current_pt)
             {
