@@ -3,7 +3,12 @@
 
 Each island must be filled with an index between 0 and 9. The index is incremented in the following order: First from the left to the right, and then from the top to the bottom:
 
-	[img]
+	Origin        Step 1        Step 2        Step 3
+	
+	.........     .........     .........     .........
+	...X.XX..     ...0.XX..     ...0.11..     ...0.11..
+	.....XX..     .....XX..     .....11..     .....11..
+	..XX.XX..     ..XX.XX..     ..XX.11..     ..22.11..
 
 Let's start by declaring a function create_islands() that will browse the map in the proper order. Primary, set a loop that browses each point of the first row:
 
