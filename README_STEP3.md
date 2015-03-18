@@ -77,7 +77,8 @@ Declare a third pointer to struct called *prev_top that will represent, for each
 +           // [2] Set the top side of the current point
 +           pt->top = prev_top;
     
-+           // [3] If the previous point does exist, set its bottom side as a pointer to the current point
++           // [3] If the previous point does exist,
++           // set its bottom side as a pointer to the current point
 +           if (prev_top)
 +               prev_top->bottom = pt;
 
