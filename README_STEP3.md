@@ -26,11 +26,13 @@ Let's declare a second pointer to struct called *prev_left that will represent t
 +           // [2] Set the left side of the current point as a pointer to the previous point
 +           pt->left = prev_left;
 +
-+           // [3] If the previous point does exist, set its right side as a pointer to the current point
++           // [3] If the previous point does exist,
++           // set its right side as a pointer to the current point
 +           if (prev_left)
 +               prev_left->right = pt;
 +
-+           // [3] Finally, set the current point as the previous, in order to use it during the next iteration
++           // [3] Finally, set the current point as the previous,
++           // in order to use it during the next iteration
 +           prev_left = pt;
 +       }
 +   }
